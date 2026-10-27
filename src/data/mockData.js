@@ -217,7 +217,9 @@ export const authorizationCategories = [
   },
 ];
 
-export const cardMappings = [];
+export const cardMappings = [
+  { cardValue: "campus-id:v1:demo-ama-240184", studentId: "STU-240184" },
+];
 
 export const initialEvents = [
   {

@@ -185,6 +185,8 @@ td { padding: 11px 12px; border-top: 1px solid #eff2f4; color: #647380; font-siz
 .notice-amber { color: #82652e; background: #fff8e9; }
 .notice svg { flex: 0 0 auto; margin-top: 1px; }
 .scan-notice { margin-top: 10px; }
+.mapping-notice { margin-top: 10px; }
+.mapping-notice code { padding: 1px 3px; border-radius: 3px; background: #f7edda; font-size: 8px; }
 .result-panel { border-top: 2px solid #e7ebef; }
 .result-success { border-top-color: #67b291; }
 .result-denied { border-top-color: #d6817d; }

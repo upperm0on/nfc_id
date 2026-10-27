@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { authorizationCategories, facilities, students } from "../src/data/mockData.js";
+import { authorizationCategories, cardMappings, facilities, students } from "../src/data/mockData.js";
 import { evaluateVerification, resolveCard } from "../src/services/verification.js";
 import { normalizeNdefMessage } from "../src/services/nfc.js";
 
@@ -23,6 +23,12 @@ function verify(cardValue, mode, extra = {}) {
 
 test("resolves an explicitly configured card mapping", () => {
   assert.equal(resolveCard("fixture-card-1", mappings, students).student.studentId, "STU-240184");
+});
+
+test("resolves the configured demo NFC token to Ama's mock student record", () => {
+  const result = resolveCard("campus-id:v1:demo-ama-240184", cardMappings, students);
+  assert.equal(result.status, "matched");
+  assert.equal(result.student.studentId, "STU-240184");
 });
 
 test("unknown cards and ambiguous mappings fail safely", () => {

@@ -524,6 +524,7 @@ function ScanPage({ mode, setMode, setLatestResult, setScanError, setScanState, 
           </div>
           {scanError && <div className="notice notice-amber scan-notice"><AlertCircle size={16} /><span>{scanError}</span></div>}
           <div className="reader-note"><Info size={15} /><span>{capability.message} This browser API reads NDEF records; it does not expose a universal card UID.</span></div>
+          <div className="notice notice-amber mapping-notice"><Info size={15} /><span>{cardMappings.length === 0 ? <>No card-to-student mappings are configured yet. A card may read successfully but will remain unrecognized until its supported identifier is mapped in <code>src/data/mockData.js</code>.</> : `${cardMappings.length} card-to-student mapping${cardMappings.length === 1 ? "" : "s"} configured.`}</span></div>
           <div className="privacy-note"><LockKeyhole size={14} /><span>Raw card data is not saved in verification logs.</span></div>
         </section>
         <section className={`panel result-panel ${resultTone}`}>
